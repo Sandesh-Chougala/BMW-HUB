@@ -66,15 +66,6 @@ export default function Cart({
           <div className="cart-summary">
             <h3>Total: ₹{total.toLocaleString()}</h3>
 
-            <button className="btn btn-primary large">
-              Checkout
-            </button>
-            <button
-              className="btn btn-secondary"
-              onClick={clearCart}
-            >
-              Clear Cart
-            </button>
           </div>
         </>
       )}

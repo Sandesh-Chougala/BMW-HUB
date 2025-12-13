@@ -455,6 +455,244 @@ body {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(59,130,246,0.4);
 }
+/* ----------------------------------------------------------
+   CART PAGE
+---------------------------------------------------------- */
+
+.cart-row {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.2rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cart-img {
+  width: 140px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.cart-row .car-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.cart-row .car-specs {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin: 4px 0;
+}
+
+.cart-row .car-price {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #3b82f6;
+}
+
+/* ----------------------------------------------------------
+   QUANTITY CONTROLS
+---------------------------------------------------------- */
+
+.qty-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.qty-controls span {
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.qty-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f8fafc;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 800;
+  transition: all 0.25s ease;
+}
+
+.qty-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: scale(1.05);
+}
+
+/* ----------------------------------------------------------
+   REMOVE BUTTON
+---------------------------------------------------------- */
+
+.btn-danger {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  border: none;
+  color: white;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.btn-danger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(239, 68, 68, 0.4);
+}
+
+/* ----------------------------------------------------------
+   CART SUMMARY
+---------------------------------------------------------- */
+
+.cart-summary {
+  margin-top: 2rem;
+  padding: 1.6rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.cart-summary h3 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #e5e7eb;
+}
+
+/* ----------------------------------------------------------
+   EMPTY CART MESSAGE
+---------------------------------------------------------- */
+
+.muted-center {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+}
+
+
+/* ----------------------------------------------------------
+   PRODUCT DETAIL BUTTONS
+---------------------------------------------------------- */
+
+.detail-btn-row {
+  display: flex;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+/* ADD TO CART */
+.btn-primary {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: white;
+  border: none;
+  padding: 0.95rem 1.3rem;
+  font-size: 1rem;
+  font-weight: 800;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.45);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(59, 130, 246, 0.6);
+}
+
+/* BOOK TEST DRIVE */
+.btn-secondary {
+  background: transparent;
+  color: #e5e7eb;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  padding: 0.95rem 1.3rem;
+  font-size: 1rem;
+  font-weight: 800;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+/* ----------------------------------------------------------
+   TOAST ALERT (TEST DRIVE)
+---------------------------------------------------------- */
+
+.toast-alert {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+  color: white;
+  padding: 16px 22px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 12px 30px rgba(34, 197, 94, 0.45);
+  animation: slideToast 0.4s ease, fadeOut 0.5s ease 3s forwards;
+  z-index: 9999;
+}
+
+@keyframes slideToast {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+
+/* ----------------------------------------------------------
+   RESPONSIVE CART
+---------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .cart-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-img {
+    width: 100%;
+    height: 180px;
+  }
+
+  .qty-controls {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .cart-summary {
+    flex-direction: column;
+    text-align: center;
+  }
+}
 
 
 /* ----------------------------------------------------------

@@ -13,7 +13,7 @@ import Products from "./pages/Products";
 import Cart from "./pages/Cart";
 import ProductDetail from "./pages/ProductDetail";
 
-/* 🔥 FIX: Reveal animation runs on EVERY route change */
+/* 🔥 Reveal animation runs on every route change */
 function RevealHandler() {
   const location = useLocation();
 
@@ -87,7 +87,6 @@ function App() {
         {/* NAVBAR */}
         <nav className="navbar">
           <div className="nav-container">
-
             <Link to="/" className="logo">
               BMW<span>HUB</span>
             </Link>
@@ -142,6 +141,39 @@ function App() {
             }
           />
         </Routes>
+
+        {/* FOOTER */}
+        <footer className="footer reveal">
+          <div className="footer-container">
+
+            <div className="footer-col">
+              <h3 className="footer-title">BMW HUB</h3>
+              <p className="footer-text">
+                Premium BMW car collection for performance and luxury lovers.
+              </p>
+            </div>
+
+            <div className="footer-col">
+              <h4 className="footer-heading">Explore</h4>
+              <a href="/products" className="footer-link">All Cars</a>
+              <a href="/products" className="footer-link">SUV Series</a>
+              <a href="/products" className="footer-link">M Performance</a>
+              <a href="/products" className="footer-link">Electric Series</a>
+            </div>
+
+            <div className="footer-col">
+              <h4 className="footer-heading">Contact</h4>
+              <p className="footer-text">📧 sandeshchougala205@gmail.com</p>
+              <p className="footer-text">📞 +91 63604 28201</p>
+              <p className="footer-text">📍 Karnataka, India</p>
+            </div>
+
+          </div>
+
+          <div className="footer-bottom">
+            © {new Date().getFullYear()} BMW HUB. All Rights Reserved.
+          </div>
+        </footer>
 
       </div>
     </Router>
